@@ -21,5 +21,15 @@ def predict_api():
        prediction=regmodel.predict(scaleddata)
        return jsonify(prediction.tolist()[0][0])
 
+@app.route("/predict",methods=["POST"])
+def predict():
+       formdata=np.array([float(x) for x in request.form.values()]).reshape(1,-1)
+       print("data is:-",formdata,"total len is",len(formdata))
+       scaling=pickle.load(open("scalerpickle.pkl","rb"))
+       scaledform=scaling.transform(formdata)
+       prediction=regmodel.predict(scaledform)
+       return render_template("home.html",predictionform=prediction[0])
+
+
 if __name__=="__main__":
        app.run(debug=True)

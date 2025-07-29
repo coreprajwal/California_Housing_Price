@@ -1,2 +1,37 @@
-<h1>Welocome Welcome Welcome....Dosto!!! and my fvourite </h1>
-{{name}}
+<!Doctype html>
+<html>
+<head>California House Price Prediction</head>
+<body>
+       <form action="/predict" method="POST">
+
+              <label>MedInc</label>
+              <input type="number" name="MedInc" required="required"><br>
+
+              <label>HouseAge</label>
+              <input type="number" name="HouseAge" required="required"><br>
+
+              <label>AveRooms</label>
+              <input type="number" name="AveRooms" required="required"><br>
+
+              <label>AveBedrms</label>
+              <input type="number" name="AveBedrms" required="required"><br>
+
+              <label>Population</label>
+              <input type="number" name="Population" required="required"><br>
+
+              <label>AveOccup</label>
+              <input type="number" name="AveOccup" required="required"><br>
+
+              <label>Latitude</label>
+              <input type="number" name="Latitude" required="required"><br>
+
+              <label>Longitude</label>
+              <input type="number" name="Longitude" required="required"><br>
+
+              <button type="submit">Submit</button>
+
+
+       </form>
+       {{predictionform}}
+       <body>
+</html>
